@@ -1,15 +1,20 @@
 class Pessoa:
-    def __init__(self, nome = None, idade = 23):
+    def __init__(self, *filhos, nome = None, idade = 23):  #atibutos de instância
         self.nome = nome
         self.idade = idade
+        self.filhos = list(filhos)
+
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
 
 if __name__ == '__main__':
-    p = Pessoa()
-    p.nome = 'eduardo'
-    print(Pessoa.cumprimentar(p))
-    print(id(p))
-    print(p.cumprimentar())
-    print(p.nome)
+    eduardo = Pessoa(nome='Eduardo')
+    claudio = Pessoa(eduardo, nome='Claudio')
+    print(Pessoa.cumprimentar(eduardo))
+    print(id(eduardo))
+    print(claudio.cumprimentar())
+    print(claudio.nome)
+    print(claudio.filhos)
+    for filho in claudio.filhos:
+        print(filho.nome)
