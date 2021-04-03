@@ -15,6 +15,7 @@ if __name__ == '__main__':
     print(id(eduardo))
     print(claudio.cumprimentar())
     print(claudio.nome)
-    print(claudio.filhos)
-    for filho in claudio.filhos:
-        print(filho.nome)
+    eduardo.sobrenome = 'Bazler'
+    print(eduardo.__dict__)
+    del eduardo.idade
+    print(eduardo.__dict__)
