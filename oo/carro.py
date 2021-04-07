@@ -148,3 +148,11 @@ class Direcao:
         self.valor = self.rotacao_para_esquerda_dct[self.valor]
 
 
+motor1 = Motor()     #defino o primeiro objeto
+dire = Direcao()     #defino o segundo onjeto
+teste_carro = Carro(motor= motor1, direcao=dire)  #defino o terceiro objeto, composto dos outros dois onbjetos
+teste_carro.acelerar()
+print(teste_carro.calcular_velocidade())
+teste_carro.acelerar()
+print(teste_carro.calcular_velocidade())
+
