@@ -9,9 +9,19 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_da_classe(cls):
+        return f'{cls} - olhios {cls.olhos}'
+
+class Homen(Pessoa):  #A classe pessoa Herda os atribudos da classe Pessoa
+    pass
 
 if __name__ == '__main__':
-    eduardo = Pessoa(nome='Eduardo')
+    eduardo = Homen(nome='Eduardo')
     claudio = Pessoa(eduardo, nome='Claudio')
     print(Pessoa.cumprimentar(eduardo))
     print(id(eduardo))
@@ -27,3 +37,5 @@ if __name__ == '__main__':
     print(eduardo.olhos)
     print(eduardo.__dict__)
     print(id(Pessoa.olhos), id(eduardo.olhos))
+    print(Pessoa.metodo_estatico(), eduardo.metodo_estatico())
+    print(Pessoa.nome_e_atributos_da_classe(), eduardo.nome_e_atributos_da_classe())
