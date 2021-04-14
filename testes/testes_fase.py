@@ -58,7 +58,7 @@ class PassaroFake(AtorFake):
 
     def lancar(self, angulo, tempo):
         if self._lancado:
-            raise DuploLancamentoExcecao()
+            raise DuploLancamentoExcecao()  #"chama a exceção, dessa forma ele não executa mais linhas de código no método
         self._lancado = True
 
     def colidir_com_chao(self):
